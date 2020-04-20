@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissor</title>
+        <meta charset='UTF-8'/>
+    </head>
+    <body>
+        <script>
+            let playerScore = 0;
+            let computerScore = 0;
+
+            function computerPlay() {
+                const words = ['rock', 'paper', 'scissor'];
+                const number = Math.floor(Math.random()*words.length);
+                const word = words[number];                           //shortened version let word = words[Math.floor(Math.random()*words.length)];
+                return word;
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = prompt('Please enter your choice.').toLowerCase();
+                computerSelection = computerPlay();
+
+                if (playerSelection == computerSelection) {
+                    return('It\'s a tie!');
+                } else if (playerSelection == 'rock' && computerSelection == 'paper') {
+                    computerScore++;
+                    return 'You Lose! Paper beats Rock.';
+                } else if (playerSelection == 'paper' && computerSelection == 'scissor') {
+                    computerScore++;
+                    return 'You Lose! Scissor beats Paper.';
+                } else if (playerSelection == 'scissor' && computerSelection == 'rock') {
+                    computerScore++;
+                    return 'You Lose! Rock beats Scissor.';
+                } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                    playerScore++;
+                    return 'You Win! Paper beats Rock.';
+                } else if (playerSelection == 'scissor' && computerSelection == 'paper') {
+                    playerScore++;
+                    return 'You Win! Scissor beats Paper.';
+                } else if (playerSelection == 'rock' && computerSelection == 'scissor') {
+                    playerScore++;
+                    return 'You Win! Rock beats Scissor.';
+                } 
+            }
+
+            function game () {
+                for (let i = 0; i < 5; i++) {
+                    console.log(playRound());
+                }
+
+                if (computerScore > playerScore) {
+                    return 'You Lose! Computer Score is ' + computerScore + '. Your Score is ' + playerScore + '.';
+                } else if (computerScore < playerScore) {
+                    return 'You Win! Computer Score is ' + computerScore + '. Your Score is ' + playerScore + '.';
+                } else {
+                    return 'It\'s a tie.';
+                }
+            }
+
+            console.log(game());
+
+        </script>
+    </body>
+</html>
+
+<!--
+
+
+
