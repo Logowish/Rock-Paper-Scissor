@@ -1,69 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rock Paper Scissor</title>
+        <title>Rock Paper Scissors</title>
         <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
+        <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>
     </head>
+
     <body>
-        <script>
-            let playerScore = 0;
-            let computerScore = 0;
+        <h1>Rock Paper Scissors</h1>
 
-            function computerPlay() {
-                const words = ['rock', 'paper', 'scissor'];
-                const number = Math.floor(Math.random()*words.length);
-                const word = words[number];                           //shortened version let word = words[Math.floor(Math.random()*words.length)];
-                return word;
-            }
+        <p class='round'></p>
 
-            function playRound(playerSelection, computerSelection) {
-                playerSelection = prompt('Please enter your choice.').toLowerCase();
-                computerSelection = computerPlay();
+        <div class='flex'>
+            <div class='designForComputer'>
+                <p class='computer'>Computer</p>
+                <div class='circleComputer'></div>
+                <div class='Score'>Score<p id='cScoreOutput'></p></div>
+            </div>
+                
+            <div class='container'>
+                <p class='result'></p>
+            </div>
 
-                if (playerSelection == computerSelection) {
-                    return('It\'s a tie!');
-                } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-                    computerScore++;
-                    return 'You Lose! Paper beats Rock.';
-                } else if (playerSelection == 'paper' && computerSelection == 'scissor') {
-                    computerScore++;
-                    return 'You Lose! Scissor beats Paper.';
-                } else if (playerSelection == 'scissor' && computerSelection == 'rock') {
-                    computerScore++;
-                    return 'You Lose! Rock beats Scissor.';
-                } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-                    playerScore++;
-                    return 'You Win! Paper beats Rock.';
-                } else if (playerSelection == 'scissor' && computerSelection == 'paper') {
-                    playerScore++;
-                    return 'You Win! Scissor beats Paper.';
-                } else if (playerSelection == 'rock' && computerSelection == 'scissor') {
-                    playerScore++;
-                    return 'You Win! Rock beats Scissor.';
-                } 
-            }
+            <div class='designForPlayer'>
+                <p class='player'>You</p>
+                <div class='circlePlayer'></div>
+                <div class='Score'>Score<p id='pScoreOutput'></p></div>
+            </div>
+        </div> 
 
-            function game () {
-                for (let i = 0; i < 5; i++) {
-                    console.log(playRound());
-                }
+        <div class='choiceBtn'>
+            <button id='rock'><i class='fa fa-hand-rock-o'></i></button>
+            <button id='paper'><i class='fa fa-hand-paper-o'></i></button>
+            <button id='scissors'><i class='fa fa-hand-scissors-o'></i></button>        
+        </div>
 
-                if (computerScore > playerScore) {
-                    return 'You Lose! Computer Score is ' + computerScore + '. Your Score is ' + playerScore + '.';
-                } else if (computerScore < playerScore) {
-                    return 'You Win! Computer Score is ' + computerScore + '. Your Score is ' + playerScore + '.';
-                } else {
-                    return 'It\'s a tie.';
-                }
-            }
+        <script src='script.js'></script>
 
-            console.log(game());
-
-        </script>
     </body>
+
 </html>
-
-<!--
-
-
-
