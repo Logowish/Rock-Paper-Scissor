@@ -107,8 +107,8 @@ h1 {
     .circleComputer, .circlePlayer {
         background-color: whitesmoke;
         margin: 0 2% 0 8%;
-        width: 40vw;
-        height: 40vw;
+        width: 20vh;
+        height: 20vh;
         border-radius: 50%;
         box-shadow: 0 0 3px darkgray;
         display: flex;
@@ -281,7 +281,7 @@ h1 {
 
     .playBtn {
         position: absolute;
-        margin-top: 18vw;
+        margin-top: 20%;
         padding: 15px 35px;
         background-image: linear-gradient(to right bottom,coral,orange);
         border: 1px solid whitesmoke;
