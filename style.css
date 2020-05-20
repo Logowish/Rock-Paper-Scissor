@@ -94,8 +94,12 @@ h1 {
         align-items: center;
     }
 
+    .computer, .player {
+        margin-right: 5%;
+    }
+
     .Score {
-        margin: -45% 8.5%;
+        margin: 0 9%;
     }
 
     #cScoreOutput, #pScoreOutput {
@@ -106,7 +110,7 @@ h1 {
 
     .circleComputer, .circlePlayer {
         background-color: whitesmoke;
-        margin: 0 2% 0 8%;
+        margin: 0 2%;
         width: 20vh;
         height: 20vh;
         border-radius: 50%;
@@ -258,7 +262,8 @@ h1 {
     }
 
     .choiceBtn {
-        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .choiceBtn button {
@@ -281,7 +286,7 @@ h1 {
 
     .playBtn {
         position: absolute;
-        margin-top: 20%;
+        margin-top: 10%;
         padding: 15px 35px;
         background-image: linear-gradient(to right bottom,coral,orange);
         border: 1px solid whitesmoke;
