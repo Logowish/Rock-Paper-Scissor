@@ -5,6 +5,7 @@ html, body {
     background-image: linear-gradient(to bottom right, aquamarine, aqua);
     box-sizing: border-box;
     height: 100%;
+    width: 100%;
     overflow-x: hidden;
     background-repeat: no-repeat;
     background-size: cover;
